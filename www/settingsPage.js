@@ -139,7 +139,7 @@ Phaser.Utils.extend(SettingsPage.prototype, {
 		this.parser = new DOMParser("xml");
 		this.xml = this.parser.parseFromString(this.xml, "application/xml");
 
-		var headerBar = game.add.tileSprite(0, 0, this.options.header.width, this.options.header.height, this.options.img_row);
+		var headerBar = this.game.add.tileSprite(0, 0, this.options.header.width, this.options.header.height, this.options.img_row);
 		var settingsText = this.createLabel(this.options.text.x, this.options.text.y, this.options.lbl_title, this.options.fontSize);
 		var _x = this.options.done.x;
 		var doneText = this.createLabel(function (o) {
