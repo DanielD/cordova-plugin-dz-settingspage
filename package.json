@@ -1,0 +1,27 @@
+{
+	"name": "cordova-plugin-dz-settingspage",
+	"version": "1.0.0",
+	"description": "Cordova Phaser.io Settings Page Plugin",
+	"cordova": {
+		"id": "cordova-plugin-dz-settingspage",
+		"platforms": [
+			"android",
+			"ios",
+			"browser"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/danield/cordova-plugin-dz-settingspage"
+	},
+	"keywords": [
+		"cordova",
+		"plugin",
+		"phaser.io",
+		"cordova-android",
+		"cordova-ios",
+		"cordova-browser",
+		"settings"
+	],
+	"license": "Apache-2.0"
+}
