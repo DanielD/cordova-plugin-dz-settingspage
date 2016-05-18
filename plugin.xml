@@ -12,6 +12,6 @@
 	</engines>
 
 	<js-module src="www/settingsPage.js" name="settingsPage">
-		<runs/>
+		<clobbers target="SettingsPage" />
 	</js-module>
 </plugin>
