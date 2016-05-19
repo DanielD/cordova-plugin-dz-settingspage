@@ -1,0 +1,46 @@
+{
+	backgroundColor: 0x282828,
+
+	xml_key: "",
+
+	img_row: "bgSettings",
+	img_switchOn: "switchOn",
+	img_switchOff: "switchOff",
+	img_transparent: "transp",
+
+	font: "DroidSans_100",
+
+	width: -1,
+	height: -1,
+	additionalHeight: 0,
+
+	link_tint: 0x007bf2,
+
+	// labels
+	lbl_title: "Settings",
+	lbl_close: "Done",
+
+	// numbers
+	fontSize: -1,
+	header: {
+		width: -1,
+		height: -1
+	},
+	text: {
+		x: -1,
+		y: -1
+	},
+	done: {
+		x: -1,
+		y: -1
+	},
+	row: {
+		x: -1,
+		y: -1,
+		width: -1,
+		height: -1,
+		text: {
+			x: -1
+		}
+	}
+}
