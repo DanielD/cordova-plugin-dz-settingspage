@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings hasAd="true">
+	<done>
+		<![CDATA[
+		BasicGame.theGame.state.start("GameTitle");
+		]]>
+	</done>
+	<rows>
+		<row text="Music" type="bool" property="BasicGame.theGame.global.playMusic" />
+		<row text="Sound Effect" type="bool" property="BasicGame.theGame.global.playSound" />
+		<row text="Leaderboards" type="link" action="BasicGame.gc.showAllLeaderboards()" />
+		<row text="Achievements" type="link" action="BasicGame.gc.showAllAchievements()" rule="BasicGame.isAndroid()"/>
+		<row text="Help" type="link">
+			<![CDATA[
+			BasicGame.theGame.state.start("Help");
+			]]>
+		</row>
+		<row text="Credits" type="link">
+			<![CDATA[
+			BasicGame.theGame.state.start("Credits");
+			]]>
+		</row>
+	</rows>
+</settings>
