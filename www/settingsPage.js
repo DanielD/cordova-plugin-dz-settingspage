@@ -148,7 +148,7 @@ Phaser.Utils.extend(SettingsPage.prototype, {
 		var doneAction = null;
 		if (this.xml.querySelector("done").hasAttribute("action")) doneAction = this.xml.querySelector("done").attributes["action"].value;
 		if (doneAction == null) {
-			doneAction = xml.querySelector("done").querySelector("action");
+			doneAction = this.xml.querySelector("done").querySelector("action");
 			if (doneAction !== null) doneAction = doneAction.textContent;
 		}
 		var doneButton = this.createButton(doneText.x, doneText.y, doneText.width, this.options.header.height, this.options.img_transparent, doneAction, this);
