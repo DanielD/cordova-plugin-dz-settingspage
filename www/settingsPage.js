@@ -47,6 +47,7 @@ Phaser.Utils.extend(SettingsPage.prototype, {
 			width: -1,
 			height: -1,
 			additionalHeight: 0,
+			adFn: function () { },
 
 			link_tint: 0x007bf2,
 
@@ -130,14 +131,33 @@ Phaser.Utils.extend(SettingsPage.prototype, {
 		if (this.options.row.text.x <= 0) {
 			this.options.row.text.x = 20;
 		}
+
+		//Load the plugin
+		this.game.kineticScrolling = this.game.plugins.add(Phaser.Plugin.KineticScrolling);
+
+		this.game.kineticScrolling.configure({
+			kineticMovement: true,
+			timeConstantScroll: 325, //really mimic iOS
+			horizontalScroll: true,
+			verticalScroll: true,
+			horizontalWheel: true,
+			verticalWheel: true,
+			deltaWheel: 40
+		});
 	},
 
 	create: function () {
+		if (this.options.adFn !== null && this.options.adFn !== undefined && typeof this.options.adFn === "function") {
+			this.options.adFn();
+		}
+
 		this.game.stage.backgroundColor = this.options.backgroundColor;
 
 		this.xml = this.game.cache.getText(this.options.xml_key);
 		this.parser = new DOMParser("xml");
 		this.xml = this.parser.parseFromString(this.xml, "application/xml");
+
+		this.game.kineticScrolling.start();
 
 		var headerBar = this.game.add.tileSprite(0, 0, this.options.header.width, this.options.header.height, this.options.img_row);
 		var settingsText = this.createLabel(this.options.text.x, this.options.text.y, this.options.lbl_title, this.options.fontSize);
@@ -223,9 +243,13 @@ Phaser.Utils.extend(SettingsPage.prototype, {
 				}
 			}
 		}
+
+		//this.game.world.setBounds(0, 0, this.options.width, (.15 * this.options.height) + (10 + spacing * this.options.fontSize));
 	},
 
 	shutdown: function () {
+		this.game.kineticScrolling.stop();
+
 		delete this.parser;
 		delete this.xml;
 		delete this.options;
