@@ -349,7 +349,7 @@ Phaser.Utils.extend(SettingsPage.prototype, {
 		}
 		if (tint !== undefined) {
 			if (tint) {
-				vText.tint = this.options.tint;
+				vText.tint = this.options.link_tint;
 			}
 		}
 		vText.anchor.setTo(0, 0.5);
